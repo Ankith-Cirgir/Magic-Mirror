@@ -43,6 +43,45 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+
+/* Reset all margins, paddings, and gaps for a clean slate */
+html, body, .region, .module {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+/* Ensure the iframe container takes full screen */
+.module.MMM-iFrame-GSlides {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100vw !important;
+  height: 100vh !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* Ensure the iframe fills the container fully */
+.module.MMM-iFrame-GSlides iframe {
+  width: 100% !important;
+  height: 100% !important;
+  border: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
 /**
  * Default styles.
  */
