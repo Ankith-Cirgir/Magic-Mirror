@@ -107,11 +107,41 @@ let config = {
 			config: {
 				// See 'Configuration options' for more information.
 					url: "https://docs.google.com/presentation/d/e/2PACX-1vS3BC8S1G0z7qAgIAVXEPpXgwQTBQypBEigX6Qb1WmPiHIW2UZBdfqJNNajVwFt1aJP2GnavgrCcuOM/pub?start=true&loop=true&delayms=5000",  // enter the embed url to your Google Slides.
-					RefreshInterval: 5 * 60 * 1000, // Refreshes Page every 5 minutes.
+					RefreshInterval: 10 * 60 * 1000, // Refreshes Page every 5 minutes.
 					width: "full", // Optional. Default: "full". The "full" value will look at screen size and match for full screen."
 					height: "full" //Optional. Default: "full"  The "full" value will look at screen size and match for full screen."
 			}
 		},
+		{
+			module: "weather",
+			position: "bottom_right", // Place weather in the bottom-right corner
+			config: {
+			  weatherProvider: "openmeteo", // Keep using OpenMeteo as the provider
+			  type: "current", // Display current weather
+			  lat: 36.174465, // Latitude for location
+			  lon: -86.767960, // Longitude for location
+			  tempUnits: "imperial", // Use "imperial" for Fahrenheit (default is "metric" for Celsius)
+			  roundTemp: true,
+			  degreeLabel: true, // Show temperature unit (°C/°F)
+			  appendLocationNameToHeader: false,
+			  updateInterval: 10 * 60 * 1000, // Update every 10 minutes
+			  animationSpeed: 1000, // Transition speed
+			  onlyTemp: true,
+			}
+		},
+		{
+			module: "clock",
+			position: "bottom_left", // Position the clock in the top-left corner
+			config: {
+			  displayType: "digital", // Use a digital clock
+			  displaySeconds: false, // Hide seconds to keep the layout clean
+			  showDate: true, // Display the current date below the time
+			  dateFormat: "MMM DD, YYYY", // Format: Day of week, Month Day
+			  clockBold: false, // Make the clock bold for better readability
+			  showTime: true, // Ensure the time is displayed
+			}
+		  }
+
 	]
 };
 

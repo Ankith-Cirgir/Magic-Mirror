@@ -1,6 +1,6 @@
 :root {
-  --color-text: #999;
-  --color-text-dimmed: #666;
+  --color-text: #828282;
+  --color-text-dimmed: #BF9F00;
   --color-text-bright: #fff;
   --color-background: #000;
   --font-primary: "Roboto Condensed";
@@ -30,33 +30,15 @@ html {
   display: none;
 }
 
-body {
-  margin: var(--gap-body-top) var(--gap-body-right) var(--gap-body-bottom) var(--gap-body-left);
-  position: absolute;
-  height: calc(100% - var(--gap-body-top) - var(--gap-body-bottom));
-  width: calc(100% - var(--gap-body-right) - var(--gap-body-left));
-  background: var(--color-background);
-  color: var(--color-text);
-  font-family: var(--font-primary), sans-serif;
-  font-weight: 400;
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-}
-
-
-/* Reset all margins, paddings, and gaps for a clean slate */
 html, body, .region, .module {
   margin: 0 !important;
   padding: 0 !important;
-  width: 100vw !important;
-  height: 100vh !important;
-  overflow: hidden !important;
   box-sizing: border-box !important;
 }
 
 /* Ensure the iframe container takes full screen */
 .module.MMM-iFrame-GSlides {
-  position: absolute !important;
+  position: fixed !important;
   top: 0;
   left: 0;
   width: 100vw !important;
@@ -68,7 +50,24 @@ html, body, .region, .module {
   margin: 0 !important;
   padding: 0 !important;
   box-sizing: border-box !important;
+  z-index: 1;
 }
+.module.weather, .module.clock {
+  z-index: 10; /* Ensure clock and weather are above */
+  position: relative; /* Maintain normal positioning */
+}
+
+.module.weather {
+  bottom: 5vh; /* Position at the top-right corner */
+  right: 5px;
+}
+
+.module.clock {
+  bottom: 5vh;
+  left: 5px;
+}
+
+
 
 /* Ensure the iframe fills the container fully */
 .module.MMM-iFrame-GSlides iframe {
@@ -92,6 +91,7 @@ html, body, .region, .module {
 
 .normal {
   color: var(--color-text);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .bright {

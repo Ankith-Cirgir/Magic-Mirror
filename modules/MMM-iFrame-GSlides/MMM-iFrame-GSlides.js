@@ -7,18 +7,19 @@
  */
 
 Module.register("MMM-iFrame-GSlides",{
-		// Default module config.
-		defaults: {
-				height:"full",
-				width:"full",
-                url: "http://magicmirror.builders/",
-				RefreshInterval: 5 * 60 * 1000,
-                scrolling: "no"
-		},
+	// Default module config.
+	defaults: {
+			height:"full",
+			width:"full",
+			url: "http://magicmirror.builders/",
+			RefreshInterval: 5 * 60 * 1000,
+			scrolling: "no"
+	},
 
-        start: function () {
+    start: function () {
 		var self = this;
 		updateDom = self.updateDom(1000)
+		this.timedRefresh(this.config.RefreshInterval);
 	},
 
 	resume: function() {
@@ -26,7 +27,9 @@ Module.register("MMM-iFrame-GSlides",{
    		return this.getDom();
 	},
 	timedRefresh: function(timeoutPeriod){
-		setTimeout("location.reload(true);",timeoutPeriod);
+		setTimeout(() => {
+			location.reload(true); // Refresh the page
+		  }, timeoutPeriod);
 	},
 
 
@@ -67,7 +70,6 @@ Module.register("MMM-iFrame-GSlides",{
 			return errorDiv;
 		}
 	},
-	
 	/*
 
 	getDom: function() {
