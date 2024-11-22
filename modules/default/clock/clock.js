@@ -112,8 +112,8 @@ Module.register("clock", {
 		const weekWrapper = document.createElement("div");
 
 		// Style Wrappers
-		dateWrapper.className = "date normal medium";
-		timeWrapper.className = "time bright large light";
+		dateWrapper.className = "date xlarge medium";
+		timeWrapper.className = "time bright xxlarge light";
 		secondsWrapper.className = "seconds dimmed";
 		sunWrapper.className = "sun dimmed small";
 		moonWrapper.className = "moon dimmed small";
